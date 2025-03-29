@@ -21,6 +21,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ✅ غير مبلغ عنه 
     ⚠️ مشبوه  
     ❌ خطير
+    📬 إذا واجهت مشكلة، راسلني مباشرة: [تواصل مع المطور](https://t.me/Checkmate012)
     """
     await update.message.reply_text(welcome_msg, parse_mode="Markdown")
 
@@ -187,7 +188,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
         print(f"⚠️ Error: {context.error}")
 
 if __name__ == "__main__":
-    TOKEN = "7156251484:AAF-GksjFZe1FZ43_sbJcCML7NJlMt4206U"
+    TOKEN = os.getenv("7156251484:AAF-GksjFZe1FZ43_sbJcCML7NJlMt4206U") 
     app = Application.builder().token(TOKEN).build()
     app.add_error_handler(error_handler)
     # Add handlers
